@@ -1,116 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>UAP Flash Talk – Michael Cifone</title>
-  <style>
-    body {
-      font-family: "Georgia", serif;
-      background-color: #f7f4ef;
-      color: #222;
-      line-height: 1.6;
-      margin: 0;
-      padding: 2rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    h1, h2 {
-      color: #2e2b2a;
-    }
-    .slide {
-      margin-bottom: 3rem;
-    }
-    .credits {
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 2rem;
-      border-top: 1px solid #ccc;
-      padding-top: 1rem;
-    }
-    .logo {
-      max-height: 80px;
-      margin-bottom: 1.5rem;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UAP Flash Talk – Michael Cifone</title>
+    <!-- Use Tailwind CSS for a modern, responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Use a custom font that fits the modern design */
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'EB Garamond', serif;
+            transition: background-color 0.5s ease;
+        }
+
+        /* Basic slide styling to control visibility and transitions */
+        .slide-container {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .slide-container.active {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Animations for slide content */
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-slide-up {
+            animation: slideUp 0.7s ease-out;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
 </head>
-<body>
+<body class="bg-[#f7f4ef] text-gray-800 flex flex-col min-h-screen">
 
-  <img src="https://raw.githubusercontent.com/suaps-director/uap-flash-talk-site/main/SUAPS%20redesigned%20logo.png" alt="SUAPS Logo" class="logo"/>
+    <!-- Header with logo and title -->
+    <header class="p-4 md:p-8 flex items-center justify-between bg-white shadow-md">
+        <div class="flex items-center space-x-4">
+            <img src="https://raw.githubusercontent.com/suaps-director/uap-flash-talk-site/main/SUAPS%20redesigned%20logo.jpg" alt="SUAPS Logo" class="h-10 md:h-12" />
+            <div class="hidden md:block">
+                <h1 class="text-xl md:text-2xl font-bold text-yellow-600">UAP Flash Talk</h1>
+                <p class="text-xs md:text-sm text-gray-600">Michael Cifone, PhD</p>
+            </div>
+        </div>
+        <div id="slide-counter" class="text-sm md:text-base font-semibold text-gray-500">1 / 7</div>
+    </header>
 
-  <h1>It’s All About Evidence — But What Is the Evidence?</h1>
-  <h2>Michael Cifone, PhD</h2>
+    <!-- Main content area for the slides -->
+    <main class="flex-grow flex items-center justify-center p-4 md:p-8">
+        <div id="presentation" class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 w-full max-w-4xl h-full flex flex-col justify-between">
 
-  <div class="slide">
-    <p>
-      For decades, UAP research has leaned on a forensic model: witness reports, radar returns, fragment analysis.
-      But this forensic approach is backward-looking, post-facto, and methodologically vague.
-    </p>
-  </div>
+            <!-- Slide 1: Title and Affiliations -->
+            <div id="slide-1" class="slide-container active">
+                <div class="text-left">
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-yellow-600 mb-4 animate-fade-in">It’s All About Evidence—But What Is the Evidence?</h2>
+                    <p class="text-lg md:text-xl font-light text-gray-600">Michael Cifone, PhD</p>
+                    <div class="mt-8">
+                        <ul class="text-base md:text-lg text-gray-700 list-none space-y-2 animate-slide-up animation-delay-100">
+                            <li>Founding Executive Director & President – Society for UAP Studies</li>
+                            <li>Editor, <em>Limina: The Journal of UAP Studies</em></li>
+                            <li>Lecturer in Philosophy, St. John's University, NYC</li>
+                            <li>Research Fellow, Center for Advanced Studies, FAU Erlangen-Nürnberg (Germany)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-  <div class="slide">
-    <h2>Shifting Toward Observational Science</h2>
-    <p>
-      Emerging initiatives like the Galileo Project point toward a science of direct observation—
-      instrumented, systematic, and repeatable. This mirrors how investigative medicine treats anomalous cases:
-      not as evidence in themselves, but as guides to structure new data-gathering efforts.
-    </p>
-  </div>
+            <!-- Slide 2: The Problem of Evidence (Historical Science) -->
+            <div id="slide-2" class="slide-container">
+                <div class="text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-yellow-600 mb-6 animate-fade-in">The Problem of Evidence</h2>
+                    <ul class="text-lg md:text-xl text-gray-700 list-disc list-inside space-y-4 ml-4 animate-slide-up">
+                        <li>UAP research has relied on a <em>forensic model</em>: anecdotal reports, radar traces, etc.</li>
+                        <li>This is <em>historical science</em>, not experimental science.</li>
+                        <li>This approach is backward-looking and methodologically vague.</li>
+                    </ul>
+                </div>
+            </div>
 
-  <div class="slide">
-    <h2>Existential Empiricism</h2>
-    <p>
-      Drawing from Spinoza, William James, and Deleuze, I argue for a philosophical shift:
-      lived experience should be treated as epistemically meaningful. Some UAP data resists reduction—
-      not due to noise, but because it exceeds current scientific categories.
-    </p>
-  </div>
+            <!-- Slide 3: Shifting to Observational Science (Galileo Project) -->
+            <div id="slide-3" class="slide-container">
+                <div class="text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-yellow-600 mb-6 animate-fade-in">Shifting Toward Observational Science</h2>
+                    <ul class="text-lg md:text-xl text-gray-700 list-disc list-inside space-y-4 ml-4 animate-slide-up">
+                        <li>Proposes a new model of direct, instrumented observation.</li>
+                        <li>Treats historical reports as indicative, not conclusive.</li>
+                        <li>This is a pivot from reactive cataloging to an active science of observation.</li>
+                    </ul>
+                </div>
+            </div>
 
-  <div class="slide">
-    <h2>Recommendations</h2>
-    <ul>
-      <li>Deploy multi-modal sensor arrays</li>
-      <li>Support metadata standards for openness and interoperability</li>
-      <li>Bridge NLP and qualitative analysis of UAP witness records</li>
-      <li>Maintain archives of gray literature and observational data</li>
-      <li>Support interdisciplinary and conceptual research</li>
-    </ul>
-  </div>
+            <!-- Slide 4: Existential Empiricism -->
+            <div id="slide-4" class="slide-container">
+                <div class="text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-yellow-600 mb-6 animate-fade-in">Existential Empiricism</h2>
+                    <ul class="text-lg md:text-xl text-gray-700 list-disc list-inside space-y-4 ml-4 animate-slide-up">
+                        <li>Addresses the role of human <em>experiencers</em>.</li>
+                        <li>Demands a radically open methodology that is neither reductionist nor credulous.</li>
+                        <li>Treats experience as a real part of the evidentiary landscape.</li>
+                    </ul>
+                </div>
+            </div>
 
-  <div class="slide">
-    <h2>Affiliations</h2>
-    <p>
-      Founding Executive Director & President – Society for UAP Studies  
-      | Editor, <em>Limina: The Journal of UAP Studies</em><br>
-      Lecturer in Philosophy, St. John's University, NYC<br>
-      Research Fellow, Center for Advanced Studies, FAU Erlangen-Nürnberg (Germany)<br>
-      <strong>Email:</strong> director@societyforuapstudies.org
-    </p>
-  </div>
+            <!-- Slide 5: Recommendations -->
+            <div id="slide-5" class="slide-container">
+                <div class="text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-yellow-600 mb-6 animate-fade-in">Recommendations</h2>
+                    <ul class="text-lg md:text-xl text-gray-700 list-disc list-inside space-y-4 ml-4">
+                        <li class="animate-slide-up animation-delay-100">Deploy multi-modal sensor arrays.</li>
+                        <li class="animate-slide-up animation-delay-200">Support metadata standards for openness.</li>
+                        <li class="animate-slide-up animation-delay-300">Bridge NLP and qualitative analysis of witness records.</li>
+                        <li class="animate-slide-up animation-delay-400">Maintain archives of gray literature and observational data.</li>
+                        <li class="animate-slide-up animation-delay-500">Support interdisciplinary and conceptual research.</li>
+                    </ul>
+                </div>
+            </div>
 
-  <div class="slide">
-    <h2>Selected Publications</h2>
-    <ul>
-      <li><strong>UAP Studies:</strong>
-        <ul>
-          <li>"It’s All About the Evidence—But What Is the Evidence?" (2025)</li>
-          <li>"The Excessive Remainder" (2024)</li>
-          <li>"The Affect of the Impossible" (2024)</li>
-        </ul>
-      </li>
-      <li><strong>Philosophy & Physics:</strong>
-        <ul>
-          <li>"Warped Drives: On UAP Kinematics and Nonlocal Motion" (2023)</li>
-          <li>"Žižek and Buddhism: A Critique in Order to Overcome Critique" (2022)</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+            <!-- Slide 6: Summary -->
+            <div id="slide-6" class="slide-container">
+                <div class="text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-yellow-600 mb-6 animate-fade-in">Summary</h2>
+                    <ul class="text-lg md:text-xl text-gray-700 list-disc list-inside space-y-4 ml-4 animate-slide-up">
+                        <li>UAP research requires a shift beyond a forensic model.</li>
+                        <li>It demands a new science of direct observation.</li>
+                        <li>It also needs a philosophical framework to understand the full scope of evidence.</li>
+                        <li>Ultimately, the challenge may be to redefine what counts as evidence.</li>
+                    </ul>
+                </div>
+            </div>
 
-  <div class="credits">
-    © 2025 Michael Cifone | Society for UAP Studies. This site is part of a flash talk presented at the 2025 AARO Workshop.
-  </div>
+            <!-- Slide 7: Thank You -->
+            <div id="slide-7" class="slide-container">
+                <div class="text-center">
+                    <img src="https://raw.githubusercontent.com/suaps-director/uap-flash-talk-site/main/SUAPS%20redesigned%20logo.jpg" alt="SUAPS Logo" class="h-16 md:h-20 mx-auto mb-8 animate-fade-in" />
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-yellow-600 mb-4 animate-fade-in">Thank You!</h2>
+                    <div class="text-lg md:text-xl text-gray-700 space-y-2 mt-8 animate-slide-up">
+                        <p class="font-bold">Michael Cifone, PhD</p>
+                        <p><a href="mailto:director@societyforuapstudies.org" class="text-amber-500 hover:underline">director@societyforuapstudies.org</a></p>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Slide 8: Publications (Moved to the end) -->
+            <div id="slide-8" class="slide-container">
+                <div class="text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-yellow-600 mb-6 animate-fade-in">Selected Publications</h2>
+                    <div class="text-lg md:text-xl text-gray-700 space-y-4">
+                        <div class="animate-slide-up animation-delay-100">
+                            <h3 class="font-semibold text-amber-500">UAP Studies:</h3>
+                            <ul class="list-disc list-inside space-y-2 ml-4">
+                                <li>(2025c) <em>Excessive Remainder: Scientific Possibility, Epistemic Limits, and the UFO Experience.</em> <em>Mindfield Bulletin</em> 17 (1).</li>
+                                <li>(2025b) <em>The New Science of Unidentified Aerospace-Undersea Phenomena (UAP)</em> (with Kevin Knuth, Philippe Ailleris, Garry Nolan, Wes Watters, et al.); <em>Progress in Aerospace Sciences</em> 156, 101097.</li>
+                                <li>(2025a) <em>Editorial</em> <em>Limina: The Journal of UAP Studies</em> 2(1): 6-11.</li>
+                                <li>(2024) <em>Editorial</em>; <em>Limina: The Journal of UAP Studies</em> 1 (1): 3-7.</li>
+                                <li>(2022) <em>Transcendental Skepticism</em>; <em>The SCU Review</em>, No. 11 (27 October).</li>
+                            </ul>
+                        </div>
+                        <div class="animate-slide-up animation-delay-300">
+                            <h3 class="font-semibold text-amber-500 mt-4">Philosophy & Physics:</h3>
+                            <ul class="list-disc list-inside space-y-2 ml-4">
+                                <li>(2014) <em>Nothingness and Science (A Propaedeutic)</em>, <em>Cosmos and History: The Journal of Natural and Social Philosophy</em> 10 (1): 253-274.</li>
+                                <li>(2008b) <em>Why Quantum Mechanics Favors Adynamical and Acausal Interpretations such as Relational Blockworld over Backwardly Causal and Time-Symmetric Rivals</em> with Michael Silberstein and W.M. Stuckey, <em>Studies in the History and Philosophy of Modern Physics</em> 39 (4): 736-751.</li>
+                                <li>(2008a) <em>Reconciling Spacetime and the Quantum: Relational Blockworld and the Quantum Liar Paradox</em> with W. M. Stuckey and Michael Silberstein; <em>Foundations of Physics</em> 38 (4): 348-383.</li>
+                                <li>(2006) <em>Deflating Quantum Mysteries via the Relational Blockworld,</em> with W. M. Stuckey and Michael Silberstein; in <em>Physics Essays</em> 19 (2): 269-283.</li>
+                                <li>(2007b) <em>The Relational Blockworld Interpretation of Non-relativistic Quantum Mechanics,</em> with W.M. Stuckey and Michael Silberstein; in <em>Foundations of Probability and Physics 4</em>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer with navigation and credits -->
+    <footer class="p-4 md:p-8 flex items-center justify-between bg-white shadow-md">
+        <button id="prev-btn" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed">Previous</button>
+        <p class="text-sm text-gray-500">&copy; 2025 Michael Cifone | Society for UAP Studies</p>
+        <button id="next-btn" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed">Next</button>
+    </footer>
+
+    <script>
+        const slides = document.querySelectorAll('.slide-container');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const slideCounter = document.getElementById('slide-counter');
+        let currentSlideIndex = 0;
+        const totalSlides = slides.length;
+
+        /**
+         * Updates the visibility of the slides and the state of the navigation buttons.
+         */
+        function updateSlide() {
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            // Show the current slide
+            slides[currentSlideIndex].classList.add('active');
+
+            // Disable/enable navigation buttons based on the current slide index
+            prevBtn.disabled = currentSlideIndex === 0;
+            nextBtn.disabled = currentSlideIndex === totalSlides - 1;
+
+            // Update the slide counter
+            slideCounter.textContent = `${currentSlideIndex + 1} / ${totalSlides}`;
+        }
+
+        /**
+         * Handles the click event for the "Next" button.
+         */
+        nextBtn.addEventListener('click', () => {
+            if (currentSlideIndex < totalSlides - 1) {
+                currentSlideIndex++;
+                updateSlide();
+            }
+        });
+
+        /**
+         * Handles the click event for the "Previous" button.
+         */
+        prevBtn.addEventListener('click', () => {
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+                updateSlide();
+            }
+        });
+
+        // Add keyboard navigation for left/right arrow keys
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                if (currentSlideIndex < totalSlides - 1) {
+                    currentSlideIndex++;
+                    updateSlide();
+                }
+            } else if (e.key === 'ArrowLeft') {
+                if (currentSlideIndex > 0) {
+                    currentSlideIndex--;
+                    updateSlide();
+                }
+            }
+        });
+
+        // Initialize the presentation on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateSlide();
+        });
+    </script>
 </body>
 </html>

@@ -1,123 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UAP Flash Talk</title>
-    <!-- Tailwind CSS CDN for easy styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Use a custom font and ensure the whole page is styled */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Hide all slides by default, show only the current one */
-        .slide {
-            display: none;
-        }
-        .slide.active {
-            display: flex;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UAP Flash Talk – Michael Cifone</title>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+      background-color: #f7f4ef;
+      color: #222;
+      line-height: 1.6;
+      margin: 0;
+      padding: 2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h1, h2 {
+      color: #2e2b2a;
+    }
+    .slide {
+      margin-bottom: 3rem;
+    }
+    .credits {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 2rem;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+    .logo {
+      max-height: 80px;
+      margin-bottom: 1.5rem;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 flex flex-col min-h-screen text-gray-800">
+<body>
 
-    <!-- Main container for the presentation -->
-    <div class="flex-grow flex items-center justify-center p-4 md:p-8">
-        <div id="presentation-container" class="bg-white rounded-xl shadow-2xl overflow-hidden w-full max-w-4xl h-full flex flex-col p-6 md:p-10">
-            
-            <!-- Slide 1: Title Slide -->
-            <div id="slide-1" class="slide active flex-col items-center justify-center text-center">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-blue-600 mb-4 animate-fade-in">UAP Flash Talk</h1>
-                <p class="text-xl md:text-2xl font-light text-gray-600 animate-slide-up">A short presentation on Unidentified Aerial Phenomena</p>
-                <div class="mt-8">
-                    <p class="text-md text-gray-500">Presented by Michael Cifone</p>
-                </div>
-            </div>
+  <img src="https://raw.githubusercontent.com/suaps-director/uap-flash-talk-site/main/SUAPS%20redesigned%20logo.png" alt="SUAPS Logo" class="logo"/>
 
-            <!-- Slide 2: Introduction -->
-            <div id="slide-2" class="slide flex-col items-center justify-center text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">What are UAPs?</h2>
-                <ul class="text-lg md:text-xl text-gray-700 list-disc list-inside space-y-3">
-                    <li class="animate-slide-up animation-delay-100">Unidentified Aerial Phenomena.</li>
-                    <li class="animate-slide-up animation-delay-200">A term used to describe unusual objects in the sky.</li>
-                    <li class="animate-slide-up animation-delay-300">Often associated with military sightings and reports.</li>
-                </ul>
-            </div>
+  <h1>It’s All About Evidence — But What Is the Evidence?</h1>
+  <h2>Michael Cifone, PhD</h2>
 
-            <!-- Slide 3: Evidence -->
-            <div id="slide-3" class="slide flex-col items-center justify-center text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Key Observations</h2>
-                <ul class="text-lg md:text-xl text-gray-700 list-disc list-inside space-y-3">
-                    <li class="animate-slide-up animation-delay-100">High-speed, unconventional maneuvers.</li>
-                    <li class="animate-slide-up animation-delay-200">Lack of visible propulsion systems.</li>
-                    <li class="animate-slide-up animation-delay-300">Trans-medium travel (moving between air and water).</li>
-                </ul>
-            </div>
+  <div class="slide">
+    <p>
+      For decades, UAP research has leaned on a forensic model: witness reports, radar returns, fragment analysis.
+      But this forensic approach is backward-looking, post-facto, and methodologically vague.
+    </p>
+  </div>
 
-            <!-- Slide 4: Conclusion -->
-            <div id="slide-4" class="slide flex-col items-center justify-center text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Summary</h2>
-                <p class="text-lg md:text-xl text-gray-700 animate-slide-up">
-                    The phenomenon of UAPs is a topic of serious discussion in scientific and governmental communities. Further investigation is needed to understand their nature.
-                </p>
-            </div>
-        </div>
-    </div>
+  <div class="slide">
+    <h2>Shifting Toward Observational Science</h2>
+    <p>
+      Emerging initiatives like the Galileo Project point toward a science of direct observation—
+      instrumented, systematic, and repeatable. This mirrors how investigative medicine treats anomalous cases:
+      not as evidence in themselves, but as guides to structure new data-gathering efforts.
+    </p>
+  </div>
 
-    <!-- Navigation buttons -->
-    <div class="p-4 md:p-8 flex justify-center space-x-4">
-        <button id="prev-btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed">Previous</button>
-        <button id="next-btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed">Next</button>
-    </div>
+  <div class="slide">
+    <h2>Existential Empiricism</h2>
+    <p>
+      Drawing from Spinoza, William James, and Deleuze, I argue for a philosophical shift:
+      lived experience should be treated as epistemically meaningful. Some UAP data resists reduction—
+      not due to noise, but because it exceeds current scientific categories.
+    </p>
+  </div>
 
-    <script>
-        const slides = document.querySelectorAll('.slide');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        let currentSlideIndex = 0;
-        const totalSlides = slides.length;
+  <div class="slide">
+    <h2>Recommendations</h2>
+    <ul>
+      <li>Deploy multi-modal sensor arrays</li>
+      <li>Support metadata standards for openness and interoperability</li>
+      <li>Bridge NLP and qualitative analysis of UAP witness records</li>
+      <li>Maintain archives of gray literature and observational data</li>
+      <li>Support interdisciplinary and conceptual research</li>
+    </ul>
+  </div>
 
-        /**
-         * Updates the visibility of the slides and the state of the navigation buttons.
-         */
-        function updateSlide() {
-            // Hide all slides
-            slides.forEach(slide => slide.classList.remove('active'));
-            // Show the current slide
-            slides[currentSlideIndex].classList.add('active');
+  <div class="slide">
+    <h2>Affiliations</h2>
+    <p>
+      Founding Executive Director & President – Society for UAP Studies  
+      | Editor, <em>Limina: The Journal of UAP Studies</em><br>
+      Lecturer in Philosophy, St. John's University, NYC<br>
+      Research Fellow, Center for Advanced Studies, FAU Erlangen-Nürnberg (Germany)<br>
+      <strong>Email:</strong> director@societyforuapstudies.org
+    </p>
+  </div>
 
-            // Disable/enable navigation buttons based on the current slide index
-            prevBtn.disabled = currentSlideIndex === 0;
-            nextBtn.disabled = currentSlideIndex === totalSlides - 1;
-        }
+  <div class="slide">
+    <h2>Selected Publications</h2>
+    <ul>
+      <li><strong>UAP Studies:</strong>
+        <ul>
+          <li>"It’s All About the Evidence—But What Is the Evidence?" (2025)</li>
+          <li>"The Excessive Remainder" (2024)</li>
+          <li>"The Affect of the Impossible" (2024)</li>
+        </ul>
+      </li>
+      <li><strong>Philosophy & Physics:</strong>
+        <ul>
+          <li>"Warped Drives: On UAP Kinematics and Nonlocal Motion" (2023)</li>
+          <li>"Žižek and Buddhism: A Critique in Order to Overcome Critique" (2022)</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 
-        /**
-         * Handles the click event for the "Next" button.
-         */
-        nextBtn.addEventListener('click', () => {
-            if (currentSlideIndex < totalSlides - 1) {
-                currentSlideIndex++;
-                updateSlide();
-            }
-        });
+  <div class="credits">
+    © 2025 Michael Cifone | Society for UAP Studies. This site is part of a flash talk presented at the 2025 AARO Workshop.
+  </div>
 
-        /**
-         * Handles the click event for the "Previous" button.
-         */
-        prevBtn.addEventListener('click', () => {
-            if (currentSlideIndex > 0) {
-                currentSlideIndex--;
-                updateSlide();
-            }
-        });
-
-        // Initialize the presentation on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            updateSlide();
-        });
-    </script>
 </body>
 </html>
-Create website file
